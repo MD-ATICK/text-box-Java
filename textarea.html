@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text area</title>
+    <link rel="stylesheet" href="textarea.css">
+</head>
+<body>
+    <h1>Limited Text <span class="text">Box</span></h1>
+    <div class="content">
+        <textarea name="" id="" class="textinput" placeholder="Add your title" required></textarea>
+        <span class="title">Title</span>
+        <div class="carecter">
+            <span class="signal-num">0</span>
+            <span class="limit-num">/100</span>
+        </div>
+    </div>
+    
+    <script>
+        const textinput = document.querySelector(".textinput"),
+        number = document.querySelector(".signal-num"),
+        content = document.querySelector(".content")
+
+        textinput.addEventListener("keyup" , () => {
+            console.log(textinput.value.length);
+            let inputvalue = textinput.value
+            number.innerHTML = inputvalue.length;
+            inputvalue.length > 100 ? content.classList.add("active") : content.classList.remove("active")
+             
+        })
+
+    </script>
+</body>
+</html>
